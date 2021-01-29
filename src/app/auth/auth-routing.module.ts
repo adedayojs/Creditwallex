@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
-import { AuthComponent } from './auth.component';
-
-const routes: Routes = [{ path: '', component: AuthComponent }];
+const routes: Routes = [
+  {
+    path: '',
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', component: SignupComponent },
+    ],
+  },
+  /* Catch all non-existent path on auth route and redirect to Login page */
+  { path: '**', redirectTo: 'login' },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}
