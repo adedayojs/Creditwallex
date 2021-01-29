@@ -9,10 +9,10 @@ const routes: Routes = [
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
+      /* Catch all non-existent path on auth route and redirect to Login page */
+      { path: '**', redirectTo: 'login' },
     ],
   },
-  /* Catch all non-existent path on auth route and redirect to Login page */
-  { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({
