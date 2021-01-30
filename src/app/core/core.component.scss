@@ -1,0 +1,35 @@
+main {
+  height: 100vh;
+  div {
+    height: inherit;
+  }
+  .active-img {
+    color: #fddb00;
+  }
+  .left-side {
+    background-color: #ffffff;
+    border: solid 0.4px #DBE3EE;
+    .sidenav {
+      margin-top: 3em;
+      padding: 0;
+
+      .nav-item {
+        list-style-type: none;
+        padding: 1em;
+        color: #A3ABB7;
+        &:hover {
+          text-decoration: none;
+          background-color: #f6f6f6;
+        }
+        &.active {
+            border-right: solid #fddb00;
+            font: normal normal medium 16px/24px Rubik;
+            color: #000000;
+          }
+      }
+    }
+  }
+  .right-side {
+    background-color: #f6f6f6;
+  }
+}

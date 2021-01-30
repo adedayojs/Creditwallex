@@ -25,7 +25,7 @@ const routes: Routes = [
         },
       },
       {
-        path: 'starship',
+        path: 'starships',
         loadChildren() {
           return import('./modules/starship/starship-routing.module').then(
             (mod) => mod.StarshipRoutingModule

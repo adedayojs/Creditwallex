@@ -1,1 +1,15 @@
-<p>core works!</p>
+<main class="container-fluid">
+    <div class="row">
+        <div routerLinkActive="active-img" class="col-12 col-md-2 px-0 left-side">
+            <img  class="img-responsive p-3" src=""
+                srcset="/assets/Dashboard/Star_wars_logo.png 1x, /assets/Dashboard/Star_wars_logo@2x.png 2x">
+
+            <ul class="sidenav">
+                <a *ngFor="let item of navItems" routerLinkActive="active" [routerLink]="item.link" class="nav-item d-block pr-0 pl-5">
+                    <li><img [src]="item.url"> <span class="ml-4">{{item.name}}</span></li>
+                </a>
+            </ul>
+        </div>
+        <div class="col-12 col-md-10 right-side"></div>
+    </div>
+</main>
