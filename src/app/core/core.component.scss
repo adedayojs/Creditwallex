@@ -1,6 +1,6 @@
 main {
   height: 100vh;
-  div {
+  > div {
     height: inherit;
   }
   .active-img {
@@ -8,7 +8,7 @@ main {
   }
   .left-side {
     background-color: #ffffff;
-    border: solid 0.4px #DBE3EE;
+    border: solid 0.4px #dbe3ee;
     .sidenav {
       margin-top: 3em;
       padding: 0;
@@ -16,20 +16,27 @@ main {
       .nav-item {
         list-style-type: none;
         padding: 1em;
-        color: #A3ABB7;
+        color: #a3abb7;
         &:hover {
           text-decoration: none;
           background-color: #f6f6f6;
         }
         &.active {
-            border-right: solid #fddb00;
-            font: normal normal medium 16px/24px Rubik;
-            color: #000000;
-          }
+          border-right: solid #fddb00;
+          font: normal normal medium 16px/24px Rubik;
+          color: #000000;
+        }
       }
     }
   }
   .right-side {
     background-color: #f6f6f6;
+    > div {
+      border: solid 0.4px #dbe3ee;
+      border-left: none;
+      img {
+        width: 2.5em;
+      }
+    }
   }
 }
