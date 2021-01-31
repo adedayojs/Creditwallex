@@ -21,6 +21,7 @@ import { TableComponent } from './components/table/table.component';
 import { PlainTableComponent } from './components/plain-table/plain-table.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,15 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule,
     BsDropdownModule.forRoot(),
   ],
   exports: [
     FontAwesomeModule,
+    ReactiveFormsModule,
     DropdownComponent,
+    FormsModule,
     CardComponent,
     TableComponent,
     PlainTableComponent,
