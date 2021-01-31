@@ -16,11 +16,12 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 /* Modules */
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [DropdownComponent],
+  declarations: [DropdownComponent, CardComponent],
   imports: [CommonModule, FontAwesomeModule, BsDropdownModule.forRoot()],
-  exports: [FontAwesomeModule, DropdownComponent],
+  exports: [FontAwesomeModule, DropdownComponent, CardComponent],
 })
 export class SharedModule {
   constructor(library: FaIconLibrary) {

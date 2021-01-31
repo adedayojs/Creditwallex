@@ -1,0 +1,37 @@
+.card {
+  box-shadow: 0px 0px 46px #0000000f;
+  margin: 1em;
+  overflow: hidden;
+  border-radius: 0.5em;
+  transition: ease-in-out 1s;
+  &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+
+  }
+  &-header {
+    h5 {
+      font: normal normal medium 20px/12px Rubik;
+      letter-spacing: 0px;
+      color: #04014e;
+    }
+    img {
+      padding: 0.5em;
+      border-radius: 11px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &-footer {
+    h4 {
+      font: normal normal medium 20px/15px Rubik;
+      letter-spacing: 0px;
+      color: #161f6a;
+    }
+    small {
+      font: normal normal normal 10px/11px Rubik;
+      letter-spacing: 0px;
+      color: #666d92;
+    }
+  }
+}
