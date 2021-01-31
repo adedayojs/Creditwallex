@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<div class="row bg-white">
+
+    <div class="col-auto p-3 ml-auto">
+        <app-dropdown (select)="updateChanges('year', $event)" [title]="selectedYear" [list]="years" class="mx-3">
+        </app-dropdown>
+        <app-dropdown (select)="updateChanges('week', $event)" [title]="selectedWeek" [list]="weeks" class="mx-3">
+        </app-dropdown>
+    </div>
+</div>
