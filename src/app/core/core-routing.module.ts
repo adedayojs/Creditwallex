@@ -11,32 +11,32 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren() {
-          return import('./modules/dashboard/dashboard-routing.module').then(
-            (mod) => mod.DashboardRoutingModule
+          return import('./modules/dashboard/dashboard.module').then(
+            (mod) => mod.DashboardModule
           );
         },
       },
       {
         path: 'people',
         loadChildren() {
-          return import('./modules/people/people-routing.module').then(
-            (mod) => mod.PeopleRoutingModule
+          return import('./modules/people/people.module').then(
+            (mod) => mod.PeopleModule
           );
         },
       },
       {
         path: 'starships',
         loadChildren() {
-          return import('./modules/starship/starship-routing.module').then(
-            (mod) => mod.StarshipRoutingModule
+          return import('./modules/starship/starship.module').then(
+            (mod) => mod.StarshipModule
           );
         },
       },
       {
         path: 'vehicles',
         loadChildren() {
-          return import('./modules/vehicles/vehicles-routing.module').then(
-            (mod) => mod.VehiclesRoutingModule
+          return import('./modules/vehicles/vehicles.module').then(
+            (mod) => mod.VehiclesModule
           );
         },
       },
