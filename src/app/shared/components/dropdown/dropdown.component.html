@@ -1,0 +1,11 @@
+<div class="btn-group" dropdown>
+    <button id="button-animated" dropdownToggle type="button" class="btn btn-light dropdown-toggle"
+        aria-controls="dropdown-animated">
+        {{title}} <span class="caret"></span>
+    </button>
+    <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+        <li *ngFor="let item of list" (click)="select.emit(item)" role="menuitem">
+            <a class="dropdown-item">{{item.item}}</a>
+        </li>
+    </ul>
+</div>
