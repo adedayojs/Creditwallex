@@ -6,6 +6,38 @@
         </app-dropdown>
     </div>
 </div>
-<section class="films">
+<section class="cards">
     <app-card *ngFor="let card of cardList" [cardDetail]="card" (selected)="handleCardClick($event)"></app-card>
+</section>
+<section class="films bg-white">
+    <h5 class="p-3 pl-5">Films</h5>
+    <div class="p-3 pl-5">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>Film Title</th>
+                    <th>Director</th>
+                    <th>Producer</th>
+                    <th>Release Date</th>
+                    <th>Episode ID</th>
+                    <th>Characters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row"> <img src="/assets/images/video-camera.svg"> Star Wars– The Phantom Menace.</td>
+                    <td>George Lucas</td>
+                    <td>Gary Kurtz</td>
+                    <td>25-09-1999</td>
+                    <td>4</td>
+                    <td>https://swapi.dev/api/people/1/</td>
+                </tr>
+                <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
