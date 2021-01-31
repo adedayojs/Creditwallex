@@ -7,5 +7,5 @@
     </div>
 </div>
 <section class="films">
-    <app-card *ngFor="let card of cardList" [cardDetail]="card"></app-card>
+    <app-card *ngFor="let card of cardList" [cardDetail]="card" (selected)="handleCardClick($event)"></app-card>
 </section>

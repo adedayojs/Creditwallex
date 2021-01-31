@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICard } from 'src/app/shared/typings/card';
 
 @Component({
@@ -7,7 +8,7 @@ import { ICard } from 'src/app/shared/typings/card';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
   years = [
     { item: 'Current Year' },
     { item: 'Last Year' },
@@ -65,5 +66,9 @@ export class DashboardComponent implements OnInit {
     category === 'year'
       ? (this.selectedYear = data.item)
       : (this.selectedWeek = data.item);
+  }
+  handleCardClick(card: ICard) {
+    // Navigate to the the card clicked
+    this.router.navigate([card.title.toLowerCase()]);
   }
 }
