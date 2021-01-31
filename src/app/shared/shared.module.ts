@@ -17,9 +17,11 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 /* Modules */
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CardComponent } from './components/card/card.component';
+import { TableComponent } from './components/table/table.component';
+import { PlainTableComponent } from './components/plain-table/plain-table.component';
 
 @NgModule({
-  declarations: [DropdownComponent, CardComponent],
+  declarations: [DropdownComponent, CardComponent, TableComponent, PlainTableComponent],
   imports: [CommonModule, FontAwesomeModule, BsDropdownModule.forRoot()],
   exports: [FontAwesomeModule, DropdownComponent, CardComponent],
 })

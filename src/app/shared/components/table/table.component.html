@@ -1,0 +1,17 @@
+<table class="table table-borderless">
+    <thead>
+        <!-- Table Heading -->
+        <tr>
+            <th *ngFor="let item of tableHeading">{{item}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loop For each table row, and populate data -->
+        <tr *ngFor="let row of tableDetail">
+            <td *ngFor="let col of row"> <img [src]="col?.imageUrl"
+                    [ngStyle]="{'color': colorCalc(col?.color)}">{{col.name}}
+            </td>
+        </tr>
+
+    </tbody>
+</table>
