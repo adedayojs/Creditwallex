@@ -24,19 +24,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td scope="row"> <img src="/assets/images/video-camera.svg"> Star Wars– The Phantom Menace.</td>
-                    <td>George Lucas</td>
-                    <td>Gary Kurtz</td>
-                    <td>25-09-1999</td>
-                    <td>4</td>
-                    <td>https://swapi.dev/api/people/1/</td>
+                <tr *ngFor="let item of allFilms">
+                    <td scope="row"> <img src="/assets/images/video-camera.svg"> item.title</td>
+                    <td>{{item.director}}</td>
+                    <td>{{item.producer}}</td>
+                    <td>{{item.release_date}}</td>
+                    <td>{{item.episode_id}}</td>
+                    <td>{{item.characters[0]}}</td>
                 </tr>
-                <tr>
-                    <td scope="row"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+
             </tbody>
         </table>
     </div>

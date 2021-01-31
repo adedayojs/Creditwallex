@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ICard } from 'src/app/shared/typings/card';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,9 @@ import { ICard } from 'src/app/shared/typings/card';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dashboard: DashboardService) {}
+  /* Server Data */
+  allFilms: Array<any>; //This should be typed inferred no time
   years = [
     { item: 'Current Year' },
     { item: 'Last Year' },
@@ -60,7 +63,9 @@ export class DashboardComponent implements OnInit {
       title: 'Species',
     },
   ];
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fetchFilms();
+  }
 
   updateChanges(category: 'year' | 'week', data: { item: string }) {
     category === 'year'
@@ -70,5 +75,12 @@ export class DashboardComponent implements OnInit {
   handleCardClick(card: ICard) {
     // Navigate to the the card clicked
     this.router.navigate([card.title.toLowerCase()]);
+  }
+
+  fetchFilms() {
+    this.dashboard.fetchFilms().subscribe((res) => {
+      this.allFilms = res.results;
+      console.log(this.allFilms)
+    });
   }
 }
