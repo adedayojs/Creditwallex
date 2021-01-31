@@ -25,6 +25,14 @@ const routes: Routes = [
         },
       },
       {
+        path: 'species',
+        loadChildren() {
+          return import('./modules/species/species.module').then(
+            (mod) => mod.SpeciesModule
+          );
+        },
+      },
+      {
         path: 'starships',
         loadChildren() {
           return import('./modules/starship/starship.module').then(

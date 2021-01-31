@@ -10,6 +10,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),
   },
+  { path: 'species', loadChildren: () => import('./core/modules/species/species.module').then(m => m.SpeciesModule) },
   { path: '**', redirectTo: 'auth' },
 ];
 
