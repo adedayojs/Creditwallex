@@ -19,11 +19,31 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CardComponent } from './components/card/card.component';
 import { TableComponent } from './components/table/table.component';
 import { PlainTableComponent } from './components/plain-table/plain-table.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [DropdownComponent, CardComponent, TableComponent, PlainTableComponent],
-  imports: [CommonModule, FontAwesomeModule, BsDropdownModule.forRoot()],
-  exports: [FontAwesomeModule, DropdownComponent, CardComponent],
+  declarations: [
+    DropdownComponent,
+    CardComponent,
+    TableComponent,
+    PlainTableComponent,
+    SearchbarComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FontAwesomeModule,
+    BsDropdownModule.forRoot(),
+  ],
+  exports: [
+    FontAwesomeModule,
+    DropdownComponent,
+    CardComponent,
+    TableComponent,
+    PlainTableComponent,
+    SearchbarComponent,
+  ],
 })
 export class SharedModule {
   constructor(library: FaIconLibrary) {
