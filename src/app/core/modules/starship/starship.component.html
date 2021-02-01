@@ -1,3 +1,3 @@
-<app-searchbar placeholder="Search for starship"></app-searchbar>
-<app-plain-table [tableHeading]="['Name', 'Model', 'Class', 'Cost (in GC)', 'Passengers', 'Length', 'Crew']">
+<app-searchbar (nextPage)="paginate('next')" [start]="start" [end]="end" [totalItem]="totalItems" placeholder="Search for starship"></app-searchbar>
+<app-plain-table [tableHeading]="['Name', 'Model', 'Class', 'Cost (in GC)', 'Passengers', 'Length', 'Crew']" [tableDetail]="filteredShip">
 </app-plain-table>

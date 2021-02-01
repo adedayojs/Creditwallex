@@ -1,10 +1,10 @@
 <div class="row bg-white p-2">
-    <div class="col-3 p-1 pl-4">
-        <a class="pointer" (click)="goBack()"> back </a>
+    <div class="col-6 p-1 pl-4">
+        <a class="pointer" (click)="goBack()"> &#60; back </a>
                 <span class="mx-2">{{totalItem}} Total</span>
                 <span class="mx-2">Showing {{start}} - {{end}} of {{totalItem}}</span>
-                <span (click)="paginate('prev')"> < </span>
-                <span (click)="paginate('next')"> > </span>
+                <span class="mx-3 pointer" (click)="paginate('prev')"> &#60; </span>
+                <span class="mx-3 pointer" (click)="paginate('next')"> &#62; </span>
     </div>
     <div class="col-auto ml-auto">
         <div class="search-box">
