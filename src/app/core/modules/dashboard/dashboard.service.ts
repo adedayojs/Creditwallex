@@ -14,7 +14,7 @@ export class DashboardService extends BaseRestService {
   fetchFilms() {
     return this.http.get<any>(this.url, {
       headers: this.headers,
-      withCredentials: environment.production,
+      // withCredentials: environment.production,
       observe: 'response',
       responseType: 'json',
     });
