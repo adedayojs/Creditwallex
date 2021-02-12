@@ -57,8 +57,9 @@ export class BaseRestService {
   }
 
   setHttpRequestParams() {
-    this.userId = localStorage.getItem('userId');
-    this.token = localStorage.getItem('token');
+    // this.userId = localStorage.getItem('userId');
+    // this.token = localStorage.getItem('token');
+    //  These are nor used here
   }
 
   resetInitialParams(headers?: { [name: string]: string | string[] }) {
