@@ -79,7 +79,7 @@ export class DashboardComponent implements OnInit {
 
   fetchFilms() {
     this.dashboard.fetchFilms().subscribe((res) => {
-      this.allFilms = res.results;
+      this.allFilms = res.body.results;
       console.log(this.allFilms)
     });
   }
