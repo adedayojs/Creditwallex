@@ -16,9 +16,11 @@ export class SearchbarComponent implements OnInit {
   /* Event Emitters */
   @Output() nextPage = new EventEmitter();
   @Output() prevPage = new EventEmitter();
-  @Output() input = new EventEmitter();
+  @Output() inputEmitter = new EventEmitter();
   constructor(private location: Location) {}
 
+  /* Helper Variables */
+  searchInput
   ngOnInit(): void {}
 
   /* Navigator button */
@@ -29,5 +31,9 @@ export class SearchbarComponent implements OnInit {
   /* Pagination handler */
   paginate(action: 'prev' | 'next') {
     action === 'prev' ? this.prevPage.emit(action) : this.nextPage.emit(action);
+  }
+  /* Search Handler */
+  search(){
+    this.inputEmitter.emit(this.searchInput)
   }
 }

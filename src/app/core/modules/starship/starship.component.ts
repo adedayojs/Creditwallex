@@ -8,6 +8,7 @@ import { StarshipService } from './starship.service';
 export class StarshipComponent implements OnInit {
   allShips: any;
   filteredShip: Array<any>;
+  allShipSorted: Array<any>;
   totalItems: number;
   end: number;
   start: number;
@@ -41,7 +42,7 @@ export class StarshipComponent implements OnInit {
         // Convert the needed values into an array of strings
         return arr.map((cat) => ship[cat]);
       });
-      console.log(this.allShips);
+      this.allShipSorted = [...this.filteredShip];
     });
   }
   paginate(type: 'next' | 'prev') {
@@ -59,6 +60,12 @@ export class StarshipComponent implements OnInit {
         // Fetch ship according to pagination
       }
     }
+  }
+  searchHandler(evt) {
+    this.filteredShip = this.allShipSorted.filter((ship: Array<string>) => {
+      // Convert to string and use Regular expression to search for match
+      return new RegExp(evt, 'ig').exec(ship.toString());
+    });
   }
   urlDecoder(url: string) {
     const myUrl = new URL(url);

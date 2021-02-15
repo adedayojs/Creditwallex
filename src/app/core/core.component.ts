@@ -34,7 +34,6 @@ export class CoreComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
   pageTitle: string;
   ngOnInit(): void {
-    console.log(this.route);
     this.route.url.subscribe((res) => {});
   }
 }
