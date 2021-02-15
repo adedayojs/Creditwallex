@@ -16,7 +16,7 @@ export class SearchbarComponent implements OnInit {
   /* Event Emitters */
   @Output() nextPage = new EventEmitter();
   @Output() prevPage = new EventEmitter();
-  @Output() input = new EventEmitter();
+  @Output() inputEmitter = new EventEmitter();
   constructor(private location: Location) {}
 
   /* Helper Variables */
@@ -34,7 +34,6 @@ export class SearchbarComponent implements OnInit {
   }
   /* Search Handler */
   search(){
-    console.log(this.searchInput)
-    this.input.emit(this.searchInput)
+    this.inputEmitter.emit(this.searchInput)
   }
 }
