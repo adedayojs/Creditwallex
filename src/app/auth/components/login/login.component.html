@@ -6,12 +6,29 @@
     <div class="form-container">
         <div class="container">
             <div class="row">
-                <h2>Sign in to continue to <br> your account.</h2>
+                <h2>Sign in to continue to <br> your account. <br> (For demo sake your email is used to sign you in)
+                </h2>
             </div>
 
             <!-- Login Form -->
             <div class="row">
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-12 col-md-4 px-0">
+                    <div class="form-group">
+                        <label for="">Firstname</label>
+                        <input type="text" name="firstname" id="firstname" class="form-control"
+                            placeholder="firstname" aria-describedby="helpId" formControlName="firstname">
+                        <small id="helpId"
+                            *ngIf="!loginForm.controls.firstname.valid && loginForm.controls.firstname.dirty"
+                            class="text-danger">Please put valid firstname</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Lastname</label>
+                        <input type="text" name="lastname" id="lastname" class="form-control"
+                            placeholder="lastname" aria-describedby="helpId" formControlName="lastname">
+                        <small id="helpId"
+                            *ngIf="!loginForm.controls.lastname.valid && loginForm.controls.lastname.dirty"
+                            class="text-danger">Please put valid lastname</small>
+                    </div>
                     <div class="form-group">
                         <label for="">Email address</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="Email address"
